@@ -10,11 +10,93 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var ListLanguages: [LanguagesModel] = []
+    var searchListLanguages: [LanguagesModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
+        getData()
+        setUpSearchBar()
     }
+    
+    private func setUpSearchBar(){
+        searchBar.delegate = self
+    }
+    
+    func getData(){
+        NetworkManager().getDataFromServer(path: "lang/ar", callback:{ data in
+            do{
+                let jsonDecoder = JSONDecoder()
+                let jsonData = try jsonDecoder.decode([LanguagesModel].self, from: data)
+                self.ListLanguages = jsonData
+                self.searchListLanguages = self.ListLanguages
+                
+                DispatchQueue.main.sync {
+                    self.tableView.reloadData()
+                }
+            }catch{
+                print(error)
+            }
+        })
+    }
+}
 
+class cellTableView: UITableViewCell{
+    @IBOutlet weak var lblName: UILabel!
+}
 
+//MARK:- Handlers
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchListLanguages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! cellTableView
+        
+        let language = searchListLanguages[indexPath.row]
+        cell.lblName.text = language.name
+       
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            searchListLanguages.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+        }
+    }
+}
+
+extension ViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            searchListLanguages  = ListLanguages;
+            tableView.reloadData()
+            return
+        }
+        searchListLanguages = ListLanguages.filter({langg -> Bool in
+            (langg.name?.lowercased().contains(searchText.lowercased()))!
+        })
+        tableView.reloadData()
+    }
+}
+
+//MARK:- Model
+
+struct LanguagesModel: Codable {
+    
+    var name: String?
 }
 

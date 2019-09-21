@@ -15,6 +15,7 @@
 		8A01766C23361B5F00645F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A01766A23361B5F00645F88 /* LaunchScreen.storyboard */; };
 		8A01767723361B5F00645F88 /* searchBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01767623361B5F00645F88 /* searchBarTests.swift */; };
 		8A01768223361B5F00645F88 /* searchBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01768123361B5F00645F88 /* searchBarUITests.swift */; };
+		8A017690233621EF00645F88 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01768F233621EF00645F88 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8A01767D23361B5F00645F88 /* searchBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = searchBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A01768123361B5F00645F88 /* searchBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchBarUITests.swift; sourceTree = "<group>"; };
 		8A01768323361B5F00645F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A01768F233621EF00645F88 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				8A01765E23361B5D00645F88 /* AppDelegate.swift */,
 				8A01766023361B5D00645F88 /* ViewController.swift */,
+				8A01768F233621EF00645F88 /* NetworkManager.swift */,
 				8A01766223361B5D00645F88 /* Main.storyboard */,
 				8A01766823361B5F00645F88 /* Assets.xcassets */,
 				8A01766A23361B5F00645F88 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A017690233621EF00645F88 /* NetworkManager.swift in Sources */,
 				8A01766123361B5D00645F88 /* ViewController.swift in Sources */,
 				8A01766723361B5D00645F88 /* searchBar.xcdatamodeld in Sources */,
 				8A01765F23361B5D00645F88 /* AppDelegate.swift in Sources */,
@@ -438,6 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = searchBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = searchBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
