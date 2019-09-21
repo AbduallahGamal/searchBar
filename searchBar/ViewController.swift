@@ -91,6 +91,7 @@ extension ViewController: UISearchBarDelegate{
         })
         tableView.reloadData()
     }
+
 }
 
 //MARK:- Model
