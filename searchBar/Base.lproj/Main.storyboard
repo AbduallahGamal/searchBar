@@ -45,29 +45,29 @@
                                                     <rect key="frame" x="5" y="5" width="404" height="250.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnR-Gx-oNH">
-                                                            <rect key="frame" x="5" y="5" width="177" height="40"/>
+                                                            <rect key="frame" x="5" y="2" width="394" height="31"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="DNk-gd-SqP"/>
-                                                                <constraint firstAttribute="width" constant="177" id="Oi5-92-lS9"/>
+                                                                <constraint firstAttribute="height" constant="31" id="wMR-an-9BA"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-di-Z3e" customClass="CIRoundedImageView" customModule="searchBar" customModuleProvider="target">
-                                                            <rect key="frame" x="209" y="3" width="180" height="150"/>
+                                                            <rect key="frame" x="50" y="42" width="304" height="150"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="180" id="EXi-iu-fTN"/>
-                                                                <constraint firstAttribute="height" constant="150" id="uIy-DG-yeD"/>
+                                                                <constraint firstAttribute="height" constant="150" id="1vK-KI-0FF"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="0.88210882940000002" blue="0.88935479620000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="A1s-di-Z3e" secondAttribute="trailing" constant="15" id="0eN-eT-d2P"/>
-                                                        <constraint firstItem="mnR-Gx-oNH" firstAttribute="leading" secondItem="xph-7R-FEU" secondAttribute="leading" constant="5" id="0pd-Cb-V4F"/>
-                                                        <constraint firstItem="mnR-Gx-oNH" firstAttribute="top" secondItem="xph-7R-FEU" secondAttribute="top" constant="5" id="253-qB-E4z"/>
-                                                        <constraint firstItem="A1s-di-Z3e" firstAttribute="top" secondItem="xph-7R-FEU" secondAttribute="top" constant="3" id="v21-Av-ctL"/>
+                                                        <constraint firstItem="A1s-di-Z3e" firstAttribute="leading" secondItem="xph-7R-FEU" secondAttribute="leading" constant="50" id="IZx-io-gXr"/>
+                                                        <constraint firstItem="mnR-Gx-oNH" firstAttribute="leading" secondItem="xph-7R-FEU" secondAttribute="leading" constant="5" id="UkL-Ou-hkz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mnR-Gx-oNH" secondAttribute="trailing" constant="5" id="aHq-jO-dj1"/>
+                                                        <constraint firstItem="A1s-di-Z3e" firstAttribute="top" secondItem="mnR-Gx-oNH" secondAttribute="bottom" constant="9" id="lt4-uG-PV6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="A1s-di-Z3e" secondAttribute="trailing" constant="50" id="sL7-pq-DRb"/>
+                                                        <constraint firstItem="mnR-Gx-oNH" firstAttribute="top" secondItem="xph-7R-FEU" secondAttribute="top" constant="2" id="t6k-yY-Zht"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
