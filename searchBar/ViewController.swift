@@ -51,7 +51,6 @@ class ViewController: UIViewController {
 class cellTableView: UITableViewCell{
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var vieew: UIView!
-    
 }
 
 //MARK:- Handlers
@@ -83,6 +82,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         }()
         cell.vieew.addSubview(cosmosView)
         cosmosView.centerInSuperview()
+        cosmosView.didTouchCosmos = { rating in
+            print("Rated: \(rating)")
+        }
         
         return cell
     }
