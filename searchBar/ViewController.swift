@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Cosmos
+import TinyConstraints
 
 class ViewController: UIViewController {
 
@@ -48,6 +50,8 @@ class ViewController: UIViewController {
 
 class cellTableView: UITableViewCell{
     @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var vieew: UIView!
+    
 }
 
 //MARK:- Handlers
@@ -63,7 +67,23 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
         let language = searchListLanguages[indexPath.row]
         cell.lblName.text = language.name
-       
+        
+        
+        // making of star rating
+        let cosmosView: CosmosView = {
+            let view = CosmosView()
+            //view.settings.updateOnTouch = false
+            view.settings.filledImage = UIImage(named: "filled")?.withRenderingMode(.alwaysOriginal)
+            view.settings.emptyImage = UIImage(named: "empty")?.withRenderingMode(.alwaysOriginal)
+            view.settings.totalStars = 7
+            view.settings.starSize = 25
+            view.settings.starMargin = 4
+            view.settings.fillMode = .precise
+            return view
+        }()
+        cell.vieew.addSubview(cosmosView)
+        cosmosView.centerInSuperview()
+        
         return cell
     }
     
